@@ -1,83 +1,262 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
+    background-image: url('geometry.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgba(43, 58, 66, 0.9); /* Semi-transparent to show background */
+    color: #ffffff;
     padding: 20px;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 h2 {
-    color: #4CAF50;
+    color: #2b3a42;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 2em;
 }
 
 section {
     padding: 20px;
-    margin: 20px 10%;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent to show background */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.portrait {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+}
+
+.about-text {
+    flex-grow: 1;
+    background: rgba(100, 100, 100, 1); /* Background to text areas for readability */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.topics-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.topics-content ul {
+    flex: 1;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.topics-content ul li {
+    background: rgba(200, 200, 200, 1); /* Light background to ensure contrast */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    color: #333; /* Dark text for readability */
+}
+
+.topics-image {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.hard-facts, .approach {
+    flex: 1;
+    background: rgba(100, 100, 100, 1); /* Ensure readability */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.hard-facts ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 ul {
-    list-style-type: square;
-    padding-left: 20px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: rgba(200, 200, 200, 1); /* Light background to ensure contrast */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    color: #333; /* Dark text for readability */
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: bold;
 }
 
 input, textarea, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.week-calendar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.day-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60px;
+}
+
+.day-option input[type="checkbox"] {
+    display: none;
+}
+
+.day-option span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(100, 100, 100, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; /* Add a transparent border initially */
+}
+
+.day-option input[type="checkbox"]:checked + span {
+    background-color: #2b3a42;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a shadow to make it stand out */
+    border: 2px solid #ffffff; /* Add a white border for contrast */
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #2b3a42;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1em;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #3a4d57;
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: rgba(43, 58, 66, 0.9); /* Semi-transparent to show background */
     color: white;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
 }
 
 .graphics {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
 }
 
 .graphics img {
-    max-width: 45%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
+    max-width: 100%;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact {
+    background-color: rgba(255, 255, 255, 0.95); /* Solid background to avoid interference from the black-and-white image */
+    color: #333; /* Dark text for readability */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header, section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portrait {
+        width: 200px;
+    }
+
+    .info-content {
+        flex-direction: column;
+    }
+
+    .graphics {
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mathematik Nachhilfe in Schwarzenau, Zwettl und Waidhofen an der Thaya. Kompetente Unterstützung für Oberstufe in allen Schultypen.">
     <title>Mathematik Nachhilfe - Schwarzenau</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,12 +15,38 @@
     </header>
 
     <section id="about">
-        <h2>Über mich</h2>
-        <p>Ich habe Physik und Informatik studiert und unterrichte am FH Technikum. Mit meiner langjährigen Erfahrung biete ich Nachhilfe in Mathematik für die Oberstufe aller Schultypen. Ich wohne in Schwarzenau und kann sowohl vor Ort als auch in der Nähe, beim Schüler/bei der Schülerin zuhause, unterrichten.</p>
+        <div class="about-content">
+            <img src="dein-bild.jpg" alt="Portrait von mir" class="portrait">
+            <div class="about-text">
+                <h3>Über mich</h3>
+                <p>Ich habe Physik und Informatik studiert und unterrichte am FH Technikum. Mit meiner langjährigen Erfahrung biete ich Nachhilfe in Mathematik für die Oberstufe aller Schultypen. Ich wohne in Schwarzenau und kann sowohl vor Ort als auch in der Nähe, beim Schüler/bei der Schülerin zuhause, unterrichten.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tutoring-info">
+        <h2>Informationen zur Nachhilfe</h2>
+        <div class="info-content">
+            <div class="hard-facts">
+                <h3>Hard Facts</h3>
+                <ul>
+                    <li>Ort: Schwarzenau und Umgebung</li>
+                    <li>Fächer: Mathematik Oberstufe (alle Schultypen)</li>
+                    <li>Dauer: 60 Minuten pro Einheit</li>
+                    <li>Preis: €30 pro Stunde</li>
+                    <li>Mögliche Zeiten: Vormittags, Nachmittags, Abends</li>
+                </ul>
+            </div>
+            <div class="approach">
+                <h3>Meine Herangehensweise</h3>
+                <p>Meine Nachhilfe basiert auf einem individuellen Ansatz, der sich an den Bedürfnissen jedes einzelnen Schülers orientiert. Durch gezielte Übungen und praxisnahe Beispiele möchte ich nicht nur Wissen vermitteln, sondern auch das Interesse und Verständnis für Mathematik fördern.</p>
+                <p>Ich setze auf eine Kombination aus traditionellem Unterricht und modernen Lernmethoden, um die Schüler bestmöglich auf Prüfungen und schulische Herausforderungen vorzubereiten.</p>
+            </div>
+        </div>
     </section>
 
     <section id="topics">
-        <h2>Mathematik-Themen</h2>
+    <div class="topics-content">
         <ul>
             <li>Analysis (Funktionen, Differenzieren, Integrieren)</li>
             <li>Lineare Algebra (Matrizen, Vektoren, Gleichungssysteme)</li>
@@ -27,11 +54,9 @@
             <li>Geometrie (Raumgeometrie, Trigonometrie)</li>
             <li>Komplexe Zahlen</li>
         </ul>
-        <div class="graphics">
-            <img src="funktion-grafik.png" alt="Beispiel einer Funktionsgrafik">
-            <img src="wahrscheinlichkeitsdichte.png" alt="Wahrscheinlichkeitsdichtefunktion">
-        </div>
-    </section>
+        <img src="integral.avif" alt="Beispiel einer mathematischen Grafik" class="topics-image">
+    </div>
+	</section>
 
     <section id="contact">
         <h2>Kontakt</h2>
@@ -42,18 +67,46 @@
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="_replyto" required>
 
-            <label for="subject">Betreff:</label>
-            <input type="text" id="subject" name="subject" required>
+            <label for="grade">Schulstufe und Schultyp:</label>
+            <input type="text" id="grade" name="subject" placeholder="z.B. 10. Klasse Gymnasium" required>
 
-            <label for="message">Nachricht:</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="days">Bevorzugte Wochentage:</label>
+            <div class="week-calendar">
+                <label class="day-option">
+                    <input type="checkbox" id="monday" name="days[]" value="Montag">
+                    <span>Mo</span>
+                </label>
+                <label class="day-option">
+                    <input type="checkbox" id="tuesday" name="days[]" value="Dienstag">
+                    <span>Di</span>
+                </label>
+                <label class="day-option">
+                    <input type="checkbox" id="wednesday" name="days[]" value="Mittwoch">
+                    <span>Mi</span>
+                </label>
+                <label class="day-option">
+                    <input type="checkbox" id="thursday" name="days[]" value="Donnerstag">
+                    <span>Do</span>
+                </label>
+                <label class="day-option">
+                    <input type="checkbox" id="friday" name="days[]" value="Freitag">
+                    <span>Fr</span>
+                </label>
+                <label class="day-option">
+                    <input type="checkbox" id="saturday" name="days[]" value="Samstag">
+                    <span>Sa</span>
+                </label>
+            </div>
 
             <label for="time">Bevorzugte Unterrichtszeiten:</label>
-            <select id="time" name="time">
+            <select id="time" name="time" required>
                 <option value="vormittags">Vormittags</option>
                 <option value="nachmittags">Nachmittags</option>
                 <option value="abends">Abends</option>
             </select>
+
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" required></textarea>
 
             <button type="submit">Senden</button>
         </form>
